@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <div class="timer">
+    {{timersTime| date:'mm:ss'}}
+  </div>
+  <div class="rows" *ngFor="let item of rows; index as i">
+    <input class="element" maxlength="1" *ngFor="let elem of item; index as j" value="{{elem.value}}" [(ngModel)]="rows[i][j].value" (ngModelChange)="logger(rows);" (click)="logger2(elem)">
+  </div>
+  <button (click)="startGame($event)">START GAME</button>
+</div>
